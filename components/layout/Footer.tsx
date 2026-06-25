@@ -10,7 +10,7 @@ const brands = [
 ]
 
 const nav = [
-  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Brands', href: '#portfolio' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
