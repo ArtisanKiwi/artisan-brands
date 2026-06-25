@@ -56,7 +56,7 @@ function Hero() {
             onClick={() => scrollTo("#portfolio")}
             className="bg-brand-green text-brand-cream hover:bg-brand-green-light border-none"
           >
-            View our portfolio
+            View our brands
           </Button>
         </div>
       </div>
