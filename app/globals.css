@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes loop-vertically {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+.animate-loop-vertically {
+  animation: loop-vertically 20s linear infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAFAF8;
+    color: #1C1C1C;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  ::selection {
+    background-color: #1E3A2F;
+    color: #FAFAF8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-brand-muted hover:text-brand-charcoal transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-brand-green text-brand-cream px-6 py-3 text-sm font-medium tracking-wide hover:bg-brand-green-light transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-brand-charcoal text-brand-charcoal px-6 py-3 text-sm font-medium tracking-wide hover:bg-brand-charcoal hover:text-brand-cream transition-colors duration-200;
+  }
+
+  .section-label {
+    @apply text-xs font-medium tracking-[0.2em] uppercase text-brand-caramel;
+  }
+
+  .divider {
+    @apply w-12 h-px bg-brand-caramel;
+  }
+}
