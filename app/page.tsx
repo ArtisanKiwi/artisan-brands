@@ -164,27 +164,15 @@ function BrandSection({ id, logo, logoAlt, heading, description, ctaLabel, ctaUr
         </div>
       </div>
 
-      {/* Two-image layout: large bg photo + small overlapping video */}
-      <div className={`relative flex items-center min-h-[24rem] lg:h-screen lg:max-h-[60rem] ${flip ? "lg:order-1" : ""}`}>
-        {/* Large background image */}
-        <div className={`relative ${flip ? "mr-[10%]" : "ml-[10%]"} w-full h-full`}>
-          <img
-            src={bigImage}
-            alt={logoAlt}
-            className="w-full h-full min-h-[24rem] lg:h-screen lg:max-h-[60rem] object-cover"
-          />
-          {overlay && <div className="absolute inset-0 bg-black/40" />}
-        </div>
-        {/* Small overlapping video/image */}
-        <div className={`absolute w-[45%] z-10 ${flip ? "right-0 pr-[5%] lg:pr-0" : "left-0 pl-[5%] lg:pl-0"}`}>
-          {video ? (
-            <video className="aspect-[2/3] w-full object-cover" autoPlay loop muted playsInline>
-              <source src={video} type="video/mp4" />
-            </video>
-          ) : (
-            <img src={logo} alt={logoAlt} className="aspect-[2/3] w-full object-contain bg-white p-6" />
-          )}
-        </div>
+      {/* Video column */}
+      <div className={`min-h-[24rem] lg:h-screen lg:max-h-[60rem] ${flip ? "lg:order-1" : ""}`}>
+        {video ? (
+          <video className="w-full h-full min-h-[24rem] lg:h-screen lg:max-h-[60rem] object-cover" autoPlay loop muted playsInline>
+            <source src={video} type="video/mp4" />
+          </video>
+        ) : (
+          <img src={logo} alt={logoAlt} className="w-full h-full min-h-[24rem] lg:h-screen lg:max-h-[60rem] object-contain bg-white p-12" />
+        )}
       </div>
     </section>
   );
